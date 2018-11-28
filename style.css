@@ -14,8 +14,8 @@ background: grey;
 #ball
 {
     position: relative;
-    left: 20px;
-    top: 30px;
+    left: 150px;
+    top: 150px;
     background: red;
     width: 20px;
     height: 20px;

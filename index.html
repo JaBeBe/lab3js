@@ -18,23 +18,31 @@
     <script>
 
        
-        window.addEventListener('deviceorientation', function DewInfo(event) 
+        window.addEventListener('deviceorientation',  DewInfo) 
+        
+        let ball = document.getElementById('ball')
+
+        function DewInfo(e)
         {
-            let alp = event.alpha
+            let alpha = event.alpha
             let beta = event.beta
             let gamma = event.gamma
+            
+            a = alpha
+            b = beta
+            c = gamma
 
-            console.log(alp, beta, gamma)
-        });
+            if(alpha != 0 || gamma != 0)
+            {
+                ball.style.left = alpha+a+"px"
+            }
+            if(beta != 0)
+            {
+                ball.style.top = beta+b+a+"px"
+            }
 
-        // function MoveBall(event)
-        // {
-        //     let zalp = `${alp}px`
-        //     ball.style.left =+ `${event.alp}px`
-        //     letzbet = `${beta}px`
-        //     ball.style.top =+ `${event.beta}px`
-        // }
-        //ToDo: funkcja sterowania #ball
+            console.log(alpha, beta, gamma)
+        }
         
     </script>
 </body>
