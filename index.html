@@ -10,14 +10,14 @@
 
 <body>
 
-    <div id="container">
-    <div id="ball"></div>
+    <div class="container">
+        <div id="ball"></div>
 
     </div>
     
     <script>
 
-       
+      
         window.addEventListener('deviceorientation',  DewInfo) 
         
         let ball = document.getElementById('ball')
@@ -27,22 +27,36 @@
             let alpha = event.alpha
             let beta = event.beta
             let gamma = event.gamma
-            
-            a = alpha
-            b = beta
-            c = gamma
-
-            if(alpha != 0 || gamma != 0)
-            {
-                ball.style.left = alpha+a+"px"
-            }
-            if(beta != 0)
-            {
-                ball.style.top = beta+b+a+"px"
-            }
+            let marLeft = ball.style.left
+            let marTop = ball.style.top
 
             console.log(alpha, beta, gamma)
+            console.log(marLeft, marTop)
+
+            if(marLeft != 0)
+            {
+                marLeft = marLeft+gamma
+            }
+            
+            if(marLeft <= 0)
+            {
+                marLeft = 2
+            }
+            if(marTop != 0)
+            {
+                marTop =+ beta
+            }
+            if(marTop <=0)
+            {
+                marTop = 2
+            }
+
+            ball.style.left = marLeft + "px"
+            ball.style.top = marTop + "px"
         }
+
+        
+
         
     </script>
 </body>
