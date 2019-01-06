@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,55 +15,7 @@
         <div id="ball"></div>
 
     </div>
-    
-    <script>
-
-      
-        window.addEventListener('deviceorientation',  DewInfo) 
-        
-        let ball = document.getElementById('ball')
-
-        function DewInfo(e)
-        {
-            let alpha = event.alpha
-            let beta = event.beta
-            let gamma = event.gamma
-            let marLeft = ball.style.left
-            let marTop = ball.style.top
-
-            console.log(alpha, beta, gamma)
-            console.log(marLeft, marTop)
-
-            if(marLeft != 0)
-            {
-                marLeft = marLeft+gamma
-            }
-
-            if(marLeft <= 0)
-            {
-                marLeft = 2
-            }
-            if(marLeft >=500)
-            {
-                marLeft = 498
-            }
-
-            if(marTop != 0)
-            {
-                marTop =+ beta
-            }
-            if(marTop <=0)
-            {
-                marTop = 2
-            }
-            if(marTop >= 500)
-            {
-                marTop = 498
-            }
-
-            ball.style.left = marLeft + "px"
-            ball.style.top = marTop + "px"
-        }  
-    </script>
+    <script src="main.js"></script>
 </body>
+
 </html>
